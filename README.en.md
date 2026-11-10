@@ -4,6 +4,10 @@
 
 CodexPool is a Go application with a local web console, a Chinese terminal dashboard, and a CLI. It manages independently authorized Codex profiles, shows usage snapshots, and launches the official Codex CLI with a selected profile.
 
+![CodexPool web console preview showing usage limits for fictional demo accounts](docs/images/console-demo.png)
+
+*Interface preview rendered from the project's UI code. All accounts, plans, and usage values are fictional; no real account screenshot is used.*
+
 [中文文档](README.md) · [Usage](docs/usage.md) · [Desktop helper](docs/desktop.md) · [Security model](docs/security-model.md) · [Compatibility](docs/compatibility.md)
 
 Version `0.1.0-preview.1`. Primarily targets macOS. This is an independent project, not an official OpenAI product. The current UI and detailed documentation are primarily in Chinese.

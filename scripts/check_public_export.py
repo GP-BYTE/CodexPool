@@ -6,6 +6,7 @@ secrets. Review all newly added source, images, and Git metadata before release.
 """
 
 import argparse
+import hashlib
 import os
 from pathlib import Path
 import re
@@ -20,6 +21,11 @@ PRIVATE_FILES = {"auth.json", "registry.json", "usage.json", ".DS_Store"}
 TEXT_EXTENSIONS = {".go", ".md", ".sh", ".mod", ".sum", ".json", ".ts",
                    ".js", ".css", ".html", ".py", ".yml", ".yaml", ".txt"}
 TEXT_NAMES = {"LICENSE", ".gitignore", "NOTICE"}
+# Visually reviewed synthetic UI preview. A replacement needs a fresh review
+# and checksum; arbitrary images remain blocked by the source privacy guard.
+REVIEWED_IMAGES = {
+    "docs/images/console-demo.png": "2d8af364fb44abb10e69705374017a96ef5d20f34305181154be9db2c321b414",
+}
 RULES = {
     "personal-home-path": re.compile(r"(?<![A-Za-z0-9_])/(?:Users|home)/[A-Za-z0-9_.-]+/"),
     "windows-home-path": re.compile(r"[A-Za-z]:\\Users\\[A-Za-z0-9_.-]+\\"),
@@ -50,6 +56,10 @@ def check(tracked=False):
         rel = path.relative_to(ROOT)
         if path.is_symlink():
             findings.append((rel, 0, "symlink"))
+            continue
+        if rel.as_posix() in REVIEWED_IMAGES:
+            if hashlib.sha256(path.read_bytes()).hexdigest() != REVIEWED_IMAGES[rel.as_posix()]:
+                findings.append((rel, 0, "reviewed-image-changed"))
             continue
         if (set(rel.parts[:-1]) & PRIVATE_DIRS or path.name in PRIVATE_FILES
                 or path.name.startswith((".env", "._"))

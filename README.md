@@ -4,6 +4,10 @@
 
 CodexPool 是用 Go 编写的本地 Codex 账号管理工具，提供网页控制台、中文终端面板和 CLI。独立登录、查看各账号的额度、选择默认账号，再使用对应账号打开官方 Codex。
 
+![CodexPool 网页控制台示意：使用虚构账号展示额度总览](docs/images/console-demo.png)
+
+*界面示意图：复用项目界面代码，所有账号、套餐与额度均为虚构数据，不含真实账号截图。*
+
 [English](README.en.md) · [快速上手](#快速上手) · [命令速查](docs/usage.md) · [Desktop 激活与恢复](docs/desktop.md) · [安全模型](docs/security-model.md) · [兼容性](docs/compatibility.md)
 
 > 当前版本：`0.1.0-preview.1`，主要面向 macOS。Codex 运行和退出等操作有严格版本门槛，请先阅读下方兼容说明。独立项目，非 OpenAI 官方产品。
