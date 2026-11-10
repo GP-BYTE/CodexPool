@@ -6,7 +6,7 @@
 2. 运行 [贡献指南](../CONTRIBUTING.md) 中的格式、测试、race、vet、构建及隐私检查。
 3. 检查所有 Git 暂存文件及历史；忽略规则不会清除已跟踪的敏感文件。
 4. 确认作者/提交者不含个人姓名与私人邮箱，截图仅含虚构数据。
-5. 推送审查后的提交，使用与 `internal/cli/app.go` 一致的版本标签，例如 `v0.1.0-preview`。
+5. 推送审查后的提交，使用与 `internal/cli/app.go` 一致的版本标签，例如 `v0.1.0-preview.1`。
 6. Release 说明列出功能、版本限制、验证范围及源码校验和；不附原始日志或真实账号截图。
 
 首次公开导出使用全新 Git 历史，作者与提交者均为 `CodexPool contributors <contributors@example.invalid>`。公开仓库的所属账号由 GitHub 显示；源码脱敏不会隐藏仓库所属账号。

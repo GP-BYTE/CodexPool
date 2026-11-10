@@ -6,7 +6,7 @@ CodexPool is a Go application with a local web console, a Chinese terminal dashb
 
 [中文文档](README.md) · [Usage](docs/usage.md) · [Desktop helper](docs/desktop.md) · [Security model](docs/security-model.md) · [Compatibility](docs/compatibility.md)
 
-Version `0.1.0-preview`. Primarily targets macOS. This is an independent project, not an official OpenAI product. The current UI and detailed documentation are primarily in Chinese.
+Version `0.1.0-preview.1`. Primarily targets macOS. This is an independent project, not an official OpenAI product. The current UI and detailed documentation are primarily in Chinese.
 
 ## Features
 

@@ -17,7 +17,7 @@ import (
 	"codexpool/internal/usage"
 )
 
-const Version = "0.1.0-preview"
+const Version = "0.1.0-preview.1"
 
 const helpText = `CodexPool — 多账号隔离管理工具
 

@@ -6,7 +6,7 @@ CodexPool 是用 Go 编写的本地 Codex 账号管理工具，提供网页控�
 
 [English](README.en.md) · [快速上手](#快速上手) · [命令速查](docs/usage.md) · [Desktop 激活与恢复](docs/desktop.md) · [安全模型](docs/security-model.md) · [兼容性](docs/compatibility.md)
 
-> 当前版本：`0.1.0-preview`，主要面向 macOS。Codex 运行和退出等操作有严格版本门槛，请先阅读下方兼容说明。独立项目，非 OpenAI 官方产品。
+> 当前版本：`0.1.0-preview.1`，主要面向 macOS。Codex 运行和退出等操作有严格版本门槛，请先阅读下方兼容说明。独立项目，非 OpenAI 官方产品。
 
 ## 能做什么
 
