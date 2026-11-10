@@ -1,12 +1,22 @@
 # CodexPool
 
-**把多个 Codex 账号，放进一个本地工作台。**
+**在终端里，一眼看清多个 Codex 账号。**
 
-CodexPool 是用 Go 编写的本地 Codex 账号管理工具，提供网页控制台、中文终端面板和 CLI。独立登录、查看各账号的额度、选择默认账号，再使用对应账号打开官方 Codex。
+CodexPool 是用 Go 编写的、以终端为主要入口的本地 Codex 账号管理工具。核心是中文 TUI 账号卡片矩阵：查看各账号额度、用键盘选择账号、打开官方 Codex。它同时提供 CLI 命令和本地网页控制台。
+
+### 终端面板 · 主要入口
+
+![CodexPool 终端面板示意：使用虚构账号展示中文账号卡片矩阵与额度进度条](docs/images/terminal-demo.png)
+
+运行 `./codexpool.sh` 即可进入终端面板。方向键或 `H/J/K/L` 选择账号，`Enter` 查看详情，`O` 打开 Codex，`R` 刷新额度。
+
+### 网页控制台 · 另一种查看方式
 
 ![CodexPool 网页控制台示意：使用虚构账号展示额度总览](docs/images/console-demo.png)
 
-*界面示意图：复用项目界面代码，所有账号、套餐与额度均为虚构数据，不含真实账号截图。*
+运行 `./codexpool-web.sh` 可在浏览器中查看同一套本地账号数据。
+
+*两张图都使用项目现有界面代码和虚构数据制作；账号、套餐与额度均为示例，不含真实账号截图。*
 
 [English](README.en.md) · [快速上手](#快速上手) · [命令速查](docs/usage.md) · [Desktop 激活与恢复](docs/desktop.md) · [安全模型](docs/security-model.md) · [兼容性](docs/compatibility.md)
 
@@ -16,8 +26,8 @@ CodexPool 是用 Go 编写的本地 Codex 账号管理工具，提供网页控�
 
 | 功能 | 用途 |
 | --- | --- |
-| 本地网页控制台 | 在一张表中比较账号、套餐、5 小时/每周额度、其他服务端窗口和 Credits；搜索并查看账号详情 |
 | 中文终端面板 | 自适应账号卡片矩阵，支持键盘选择、刷新、查看详情和打开 Codex |
+| 本地网页控制台 | 在一张表中比较账号、套餐、5 小时/每周额度、其他服务端窗口和 Credits；搜索并查看账号详情 |
 | 独立账号 Profile | 每个账号使用独立 `CODEX_HOME` 和随机目录 ID，名称修改不会移动认证目录 |
 | 官方登录流程 | 添加、重新登录和退出通过官方 Codex CLI 完成，无需把 token 粘贴给工具 |
 | 默认账号切换 | `switch` 设置 CodexPool 的默认 Profile，`open` 用对应 Profile 打开官方 Codex |
@@ -45,13 +55,13 @@ cd CodexPool
 # 添加你有权使用的账号，跟随官方登录页面完成授权
 ./codexpool.sh add work
 
-# 打开网页控制台
-./codexpool-web.sh
+# 打开中文终端面板（主要入口）
+./codexpool.sh
 ```
 
-更喜欢终端界面时，运行 `./codexpool.sh`。启动器使用 `go run`，首次运行需要下载 Go 依赖；不会修改 shell 配置或安装到系统 PATH。
+启动器使用 `go run`，首次运行需要下载 Go 依赖；不会修改 shell 配置或安装到系统 PATH。
 
-网页默认自动打开浏览器；`./codexpool-web.sh --no-open` 可只启动服务。关闭启动终端或按 `Ctrl+C` 即停止服务。
+需要网页界面时，运行 `./codexpool-web.sh`，默认自动打开浏览器；`./codexpool-web.sh --no-open` 可只启动服务。关闭启动终端或按 `Ctrl+C` 即停止网页服务。
 
 ## 日常用法
 

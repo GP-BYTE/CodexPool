@@ -13,7 +13,7 @@
 
 ## GitHub 首页
 
-建议简介：`Local Codex account manager with a web console, terminal dashboard, isolated profiles, and usage monitoring.`
+建议简介：`Terminal-first Codex account manager with a TUI dashboard, isolated profiles, usage monitoring, and a local web console.`
 
 建议 Topics：`codex`、`codex-cli`、`account-manager`、`golang`、`tui`、`local-first`、`macos`。首页由中英文 README 提供，避免使用真实账号截图。不要把文档里的 `GP-BYTE` 仓库路径误当成私有账号登录信息；它是明确指定的公开仓库命名空间。
 

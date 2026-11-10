@@ -1,12 +1,22 @@
 # CodexPool
 
-**One local workspace for your Codex accounts.**
+**Your Codex accounts, at a glance in the terminal.**
 
-CodexPool is a Go application with a local web console, a Chinese terminal dashboard, and a CLI. It manages independently authorized Codex profiles, shows usage snapshots, and launches the official Codex CLI with a selected profile.
+CodexPool is a terminal-first local Codex account manager written in Go. Its main interface is a Chinese TUI with account cards, usage bars, keyboard navigation, and shortcuts to launch the official Codex CLI. It also provides CLI commands and a local web console.
+
+### Terminal dashboard · Primary interface
+
+![CodexPool terminal preview showing account cards and usage bars for fictional demo accounts](docs/images/terminal-demo.png)
+
+Run `./codexpool.sh` to open the terminal dashboard. Use the arrow keys or `H/J/K/L` to select an account, `Enter` for details, `O` to open Codex, and `R` to refresh usage.
+
+### Web console · An alternative view
 
 ![CodexPool web console preview showing usage limits for fictional demo accounts](docs/images/console-demo.png)
 
-*Interface preview rendered from the project's UI code. All accounts, plans, and usage values are fictional; no real account screenshot is used.*
+Run `./codexpool-web.sh` to view the same local account data in a browser.
+
+*Both previews use the project's existing UI code with fictional data. All accounts, plans, and usage values are examples; no real account screenshot is used.*
 
 [中文文档](README.md) · [Usage](docs/usage.md) · [Desktop helper](docs/desktop.md) · [Security model](docs/security-model.md) · [Compatibility](docs/compatibility.md)
 
@@ -14,8 +24,8 @@ Version `0.1.0-preview.1`. Primarily targets macOS. This is an independent proje
 
 ## Features
 
-- Local web console with account search, quota comparisons, plan details, other server-provided windows, Credits, and refresh controls.
 - Responsive terminal account cards with keyboard navigation and account details.
+- Local web console with account search, quota comparisons, plan details, other server-provided windows, Credits, and refresh controls.
 - Separate `CODEX_HOME` directories with immutable random profile IDs.
 - Login, reauthentication, and logout delegated to the official Codex CLI.
 - Default profile selection and explicit per-account launches.
@@ -38,10 +48,10 @@ cd CodexPool
 ./codexpool.sh --help
 ./codexpool.sh doctor --probe-runtime
 ./codexpool.sh add work
-./codexpool-web.sh
+./codexpool.sh
 ```
 
-Use `./codexpool.sh` for the terminal dashboard, or `./codexpool-web.sh --no-open` to print the local web address. Press `Ctrl+C` in the server terminal to stop it. The launch scripts use `go run`, which downloads dependencies on first use.
+The terminal dashboard is the primary entry point. For the optional web console, run `./codexpool-web.sh`, or use `./codexpool-web.sh --no-open` to print the local web address. Press `Ctrl+C` in the server terminal to stop it. The launch scripts use `go run`, which downloads dependencies on first use.
 
 ```bash
 ./codexpool.sh accounts

@@ -25,6 +25,7 @@ TEXT_NAMES = {"LICENSE", ".gitignore", "NOTICE"}
 # and checksum; arbitrary images remain blocked by the source privacy guard.
 REVIEWED_IMAGES = {
     "docs/images/console-demo.png": "2d8af364fb44abb10e69705374017a96ef5d20f34305181154be9db2c321b414",
+    "docs/images/terminal-demo.png": "ca4f31ba23ecc0ad19dc6cac128305288e9ce659cfd02b1dc21751402681f7cd",
 }
 RULES = {
     "personal-home-path": re.compile(r"(?<![A-Za-z0-9_])/(?:Users|home)/[A-Za-z0-9_.-]+/"),
