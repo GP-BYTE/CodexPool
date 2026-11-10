@@ -1,0 +1,29 @@
+{
+  "researchDate": "2026-09-07",
+  "codexVersion": "0.153.4",
+  "binaryPath": "/Applications/ChatGPT.app/Contents/Resources/codex",
+  "sourceCommitReviewed": "e1eb98461cd42730e7b1a890c3100303d7091bc2",
+  "generatedWith": "codex app-server generate-ts --out <temporary schema directory>",
+  "scope": "Selected generated types with their transitive imports; schema evidence only, no authenticated tests performed",
+  "files": {
+    "PlanType.ts": "cc466a3091b69a53c1fdbd1540611ac3629313a806ae975a8b776bfde47480e7",
+    "serde_json/JsonValue.ts": "8697aaaa4cbe8f91492fe36dc545cc53a26e53143371c22c08385969d4e3cc61",
+    "v2/Account.ts": "122259e3439c0c0f63e53a2f2e0028a9e6f153b3bc16c1a705f640b98ff8bf37",
+    "v2/AccountRateLimitsUpdatedNotification.ts": "1ee159da58f94d89f3a320428a1c8249fc1df1078e9bdc9028199e702361da37",
+    "v2/CreditsSnapshot.ts": "e56bf82bc93959ed95748dc7363520d4cf477d9c7ac2b8e40e48c91b03c2575a",
+    "v2/GetAccountParams.ts": "73feed16e294673d984618e2264a32be4b20bfe45973fdba064bddd2e6c6c18a",
+    "v2/GetAccountRateLimitsResponse.ts": "de058b798d1506dfe3962b83b10ec5af26a8626ad4ca90d69863d7872ef5196e",
+    "v2/GetAccountResponse.ts": "f16f348c9c37a760bd7b4c75c0b7d86a57d6cbd16bd6a1c4b06dffa39157b6a9",
+    "v2/LoginAccountParams.ts": "168b2dd917703547e001b4402f74a43ea6b94f758b7ecd42406b12e3f109f315",
+    "v2/LoginAccountResponse.ts": "f80e451eacbb6621777976aaa137735cb03749b2699b84308579498b3108d67f",
+    "v2/LoginAppBrand.ts": "48e02a0917aa0fc4632c8e0675dfdf7df997e538c4c53099cf65f47f9dff5a22",
+    "v2/RateLimitReachedType.ts": "67ca3e1a5154ac7ea40be29b31ad55be4a786b228ce89fecc566ef00309b5e8c",
+    "v2/RateLimitResetCredit.ts": "2c9c8e61ab99676d0492d391cf259cef70336c42f89ed8555b000fedd943c4a1",
+    "v2/RateLimitResetCreditStatus.ts": "bdb35657a7d3b1d42c69892f1fb4ebf48a95fd4221c647f26c9aa66d646591f4",
+    "v2/RateLimitResetCreditsSummary.ts": "013f75bc1455656f0e1e42e8c7fb67d7657d2bcc3f31a15e285cca767048c3f6",
+    "v2/RateLimitResetType.ts": "762b31640420075407fe3b1a7dd6e7662551d155d0d1f562bb59f79ecc6a58e7",
+    "v2/RateLimitSnapshot.ts": "22d541aabad555d5ff02bae11acbcdd1d54c3a61496a1e05562a18aae64c4b6b",
+    "v2/RateLimitWindow.ts": "d1c57b5226a87ef3c02643835d62fe2c95b78c6c37cd53fd4aeccf68be9a7f1b",
+    "v2/SpendControlLimitSnapshot.ts": "c58ca129df392a50bd08ad077fc862a89f15981d91c059a1aeac33b8b318493f"
+  }
+}

@@ -1,0 +1,42 @@
+# Local account state and recovery material
+.codex/
+.codexpool/
+accounts/
+locks/
+cache/
+runtime-probe/
+desktop-activation/
+registry.json
+auth.json
+*-auth.json
+usage.json
+.codexpool-managed-root
+.codexpool-desktop-activation-*
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite*
+*.db
+*.log
+*.jsonl
+
+# Builds, archives, reports, editor and OS metadata
+/bin/
+/dist/
+/codexpool
+/codexpool-desktop-helper
+*.zip
+*.tar.gz
+coverage.out
+.DS_Store
+._*
+.idea/
+.vscode/
+__pycache__/
+*.pyc

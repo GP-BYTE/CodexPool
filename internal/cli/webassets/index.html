@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="codexpool-session" content="{{.Token}}">
+  <title>CodexPool · 账号工作台</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/dashboard.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>CodexPool</span><span class="brand-divider"></span><span class="brand-subtitle">账号工作台</span></div>
+      <div class="top-actions"><span id="refreshNote" class="refresh-note" role="status">正在载入</span><button id="refreshButton" class="button button-quiet" type="button"><span class="refresh-icon" aria-hidden="true">↻</span> 刷新</button><button id="doctorButton" class="button button-quiet" type="button">诊断</button><button id="addButton" class="button button-primary" type="button">＋ 添加账号</button></div>
+    </header>
+
+    <nav class="view-switch" aria-label="页面视图"><button id="overviewTab" class="view-tab active" type="button" aria-current="page">额度总览</button><button id="detailTab" class="view-tab" type="button">账号详情</button></nav>
+
+    <main id="overviewView" class="overview" aria-label="所有账号额度总览">
+      <div class="overview-heading"><div><p class="eyebrow">所有账号 / 一览</p><h1>额度总览</h1><p>横向比较各账号的剩余额度；未提供的窗口不会推测为 5 小时或每周。</p></div><div class="overview-totals"><div><span>账号</span><strong id="overviewCount">0</strong></div><div><span>就绪</span><strong id="overviewReady">0</strong></div><div><span>有额度缓存</span><strong id="overviewCached">0</strong></div></div></div>
+      <p class="overview-scroll-hint">表格可左右滑动，查看更多额度信息 →</p>
+      <div class="overview-table-wrap"><table class="overview-table"><thead><tr><th scope="col">账号</th><th scope="col">状态 / 套餐</th><th scope="col">5 小时剩余</th><th scope="col">每周剩余</th><th scope="col">其它窗口</th><th scope="col">Credits / 重置</th><th scope="col"><span class="sr-only">详情</span></th></tr></thead><tbody id="overviewRows"></tbody></table><p id="overviewEmpty" class="overview-empty" hidden>还没有账号。点击右上角“添加账号”开始。</p></div>
+      <p class="overview-footnote">仅展示最近一次缓存或刷新结果；“未提供”不等于额度为零。点击账号查看完整信息和操作。</p>
+    </main>
+
+    <div id="detailView" class="workbench" hidden>
+      <aside class="account-pane" aria-label="账号列表">
+        <div class="pane-heading"><div><p class="eyebrow">ACCOUNT POOL</p><h1>账号 <span id="accountCount">0</span></h1></div><span id="readyCount" class="ready-count">0 就绪</span></div>
+        <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="查找账号" aria-label="查找账号" autocomplete="off"></div>
+        <div id="accountList" class="account-list" role="listbox" aria-label="选择账号"></div>
+        <p id="searchEmpty" class="empty-state" hidden>没有匹配的账号</p>
+        <div id="emptyState" class="empty-state" hidden><p>还没有账号</p><span>添加后会在这里集中查看状态与额度。</span><button id="emptyAddButton" class="button button-primary" type="button">添加第一个账号</button></div>
+        <p class="pane-footnote">选择账号只查看信息，不会切换 Desktop 登录。</p>
+      </aside>
+
+      <main class="inspector" aria-label="账号详情">
+        <div id="detailContent" class="inspector-content"><div class="inspector-empty">选择左侧账号，查看额度与可执行的操作。</div></div>
+      </main>
+    </div>
+
+    <footer class="desktop-bar"><div class="desktop-copy"><span class="desktop-dot" aria-hidden="true"></span><span class="desktop-label">Desktop 恢复</span><span id="desktopState">正在检查</span></div><div class="desktop-actions"><button id="restoreButton" class="button button-quiet" type="button" disabled>恢复并打开</button><button id="restoreNoLaunchButton" class="button button-quiet" type="button" disabled>仅恢复</button></div></footer>
+  </div>
+
+  <div id="confirmBackdrop" class="modal-backdrop" hidden></div>
+  <div id="confirmDialog" class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" aria-hidden="true" hidden><p class="eyebrow">确认操作</p><h2 id="confirmTitle"></h2><p id="confirmDescription"></p><label id="confirmInputWrap" class="confirm-input-wrap" hidden>新名称<input id="confirmInput" type="text" maxlength="120"></label><div class="confirm-actions"><button id="cancelConfirm" class="button button-quiet" type="button">取消</button><button id="acceptConfirm" class="button button-primary" type="button">继续</button></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
